@@ -24,7 +24,7 @@
 		</nav>
 
 		<section>
-			<div class="lightCard ON">
+			<div class="lightCard ON" id="card1">
 				<div class="header">
 					<div class="icon"></div>
 					<p class="lightID">Light #1</p>
@@ -34,9 +34,11 @@
 					<p>Uptime : <span id="uptime-value">3h 10m</span></p>
 					<p>Location : <span id="location-value">Avenue des martyres</span></p>
 				</div>
-				<div class="button"><button>Switch</button></div>
+				<div class="button">
+					<button onclick="toggle('card1', 'ON')">Switch</button>
+				</div>
 			</div>
-			<div class="lightCard">
+			<div class="lightCard" id="card2">
 				<div class="header">
 					<div class="icon"></div>
 					<p class="lightID">Light #2</p>
@@ -46,7 +48,9 @@
 					<p>Uptime : <span id="uptime-value">########</span></p>
 					<p>Location : <span id="location-value">Rue des tuileries</span></p>
 				</div>
-				<div class="button"><button>Switch</button></div>
+				<div class="button">
+					<button onclick="toggle('card2', 'ON')">Switch</button>
+				</div>
 			</div>
 		</section>
 	</body>
