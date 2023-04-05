@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CityLights</title>
+		<link rel="stylesheet" href="style.css" />
+		<script src="index.js" defer></script>
+	</head>
+	<body>
+		<nav id="nav">
+			<div class="toggle" id="navToggle">
+				<div class="burger"></div>
+			</div>
+
+			<div class="header">
+				<img src="Assets/LogoOn.svg" />
+				<h1>CityLight</h1>
+			</div>
+
+			<a href="#">Status</a>
+			<a href="#">Historic</a>
+		</nav>
+
+		<section>
+			<div class="lightCard ON">
+				<div class="header">
+					<div class="icon"></div>
+					<p class="lightID">Light #1</p>
+				</div>
+				<div class="content">
+					<p>Status : <span id="status-value">Enabled</span></p>
+					<p>Uptime : <span id="uptime-value">3h 10m</span></p>
+					<p>Location : <span id="location-value">Avenue des martyres</span></p>
+				</div>
+				<div class="button"><button>Switch</button></div>
+			</div>
+			<div class="lightCard">
+				<div class="header">
+					<div class="icon"></div>
+					<p class="lightID">Light #2</p>
+				</div>
+				<div class="content">
+					<p>Status : <span id="status-value">Disabled</span></p>
+					<p>Uptime : <span id="uptime-value">########</span></p>
+					<p>Location : <span id="location-value">Rue des tuileries</span></p>
+				</div>
+				<div class="button"><button>Switch</button></div>
+			</div>
+		</section>
+	</body>
+</html>

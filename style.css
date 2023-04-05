@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&display=swap");
+:root {
+  --Black: #171a19;
+  --Grey: #272e2c;
+  --White: #f7f8f8;
+  --Green: #14d69c;
+  --Yellow: #e0f273;
+  --Border-radius: 20px;
+}
+
+html,
+body {
+  margin: 0;
+  inset: 0;
+  background-color: var(--Black);
+  color: var(--White);
+  font-family: "JetBrains Mono", monospace;
+}
+
+nav {
+  --padding: 20px;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding-inline: var(--padding);
+  background-color: var(--Grey);
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+nav .header {
+  display: flex;
+  align-items: center;
+  padding-top: var(--padding);
+  gap: var(--padding);
+}
+nav .header img {
+  aspect-ratio: 131/124;
+  height: 40px;
+}
+nav .header h1 {
+  font-size: 30px;
+  margin: 0;
+}
+nav a {
+  font-size: 20px;
+  position: relative;
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--White);
+  text-decoration: none;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: var(--Border-radius);
+  background-color: var(--Green);
+  transform-origin: left;
+  transition: all 0.1s ease-in;
+  transform: scaleX(0%);
+}
+nav a:hover::after {
+  transform: scaleX(100%);
+}
+nav.open {
+  transform: translateX(0%);
+}
+nav.open .toggle > .burger {
+  background-color: transparent;
+  transform-origin: center;
+  transition: all 0.1s ease-in-out;
+}
+nav.open .toggle > .burger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+nav.open .toggle > .burger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+nav:not(.open) {
+  transform: translateX(-100%);
+}
+
+.toggle {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  aspect-ratio: 1;
+  width: 40px;
+  padding: 15px;
+  border-radius: 0 var(--Border-radius) var(--Border-radius) 0;
+  background-color: inherit;
+}
+.toggle > .burger {
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: var(--White);
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: var(--Border-radius);
+  transition: all 0.1s ease-in-out;
+}
+.toggle > .burger::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: var(--White);
+  top: -20px;
+  transform: translateY(50%);
+  border-radius: inherit;
+  transition: inherit;
+  transform-origin: center;
+}
+.toggle > .burger::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: var(--White);
+  top: 20px;
+  transform: translateY(-50%);
+  border-radius: inherit;
+  transition: inherit;
+  transform-origin: center;
+}
+.toggle:hover > .burger {
+  transform-origin: center;
+  transition: all 0.1s ease-in-out;
+}
+.toggle:hover > .burger::before {
+  transform: translateY(50%) scaleX(75%);
+}
+.toggle:hover > .burger::after {
+  transform: translateY(-50%) scaleX(75%);
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  padding: 80px;
+  gap: 80px;
+}
+section .lightCard {
+  width: 100%;
+  height: 80vh;
+  padding: 40px;
+  background-color: var(--Grey);
+  border-radius: var(--Border-radius);
+  box-shadow: inset rgba(255, 255, 255, 0.1) 5px 5px 5px, inset rgba(23, 26, 25, 0.75) -5px -5px 5px;
+}
+section .lightCard .header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  gap: 20px;
+}
+section .lightCard .header .icon {
+  aspect-ratio: 1;
+  width: 25%;
+  background-image: url("Assets/LogoOff.svg");
+}
+section .lightCard .header > * {
+  margin: 0 auto;
+}
+section .lightCard span#status-value {
+  color: var(--Green);
+}
+section .lightCard.ON .icon {
+  background-image: url("Assets/LogoOn.svg");
+}
+section .lightCard.ON span#status-value {
+  color: var(--Yellow);
+}
