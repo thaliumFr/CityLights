@@ -204,6 +204,9 @@ section {
 				aspect-ratio: 1;
 				width: 25%;
 				background-image: url("Assets/LogoOff.svg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
 			}
 			& > * {
 				margin: 0 auto;
